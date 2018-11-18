@@ -1,0 +1,54 @@
+::root {
+  font-size: 62.5%;
+}
+
+body {
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.wrapper {
+  align-self: center;
+}
+.wrapper span {
+  display: block;
+  width: 4rem;
+  height: 0.3rem;
+  margin: 1rem;
+  background: #222222;
+  border-radius: 0.4rem;
+  transition: all 300ms cubic-bezier(0.46, 0.02, 0.51, 1.01);
+}
+.wrapper span:nth-child(2) {
+  width: 2rem;
+}
+.wrapper span:nth-child(3) {
+  width: 3rem;
+}
+.wrapper:hover {
+  cursor: pointer;
+}
+.wrapper:hover span:nth-child(2) {
+  width: 3.3rem;
+}
+.wrapper:hover span:nth-child(3) {
+  width: 3.5rem;
+}
+.wrapper.active span:last-child {
+  width: 0;
+  opacity: 0;
+}
+.wrapper.active span:nth-child(2) {
+  width: 2rem;
+  -webkit-transform: translateY(-0.7rem) rotate(-45deg);
+  transform: translateY(-0.7rem) rotate(-45deg);
+}
+.wrapper.active span:first-child {
+  width: 2rem;
+  -webkit-transform: translateY(0.7rem) rotate(45deg);
+  transform: translateY(0.7rem) rotate(45deg);
+}
